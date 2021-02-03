@@ -11,8 +11,8 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 
 def get_model():
-    model = load_model('./model/model.h5')
-    tokenizer = pickle.load(open('./model/tokenizer.pickle', 'rb'))
+    model = load_model('models/model.h5')
+    tokenizer = pickle.load(open('models/tokenizer.pickle', 'rb'))
     print('Model Loaded!!')
     return model, tokenizer
 

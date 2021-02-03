@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>News Classifier</title>
+  </head>
+  <body>
+    <p>{% if prediction == 0 %}</p>
+    <p>Automobile</p>
+    {% elif prediction == 1%}
+    <p>Entertainment</p>
+    {% elif prediction == 2%}
+    <p>Politics</p>
+    {% elif prediction == 3%}
+    <p>Science</p>
+    {% elif prediction == 4%}
+    <p>Sports</p>
+    {% elif prediction == 5%}
+    <p>Technology</p>
+    {% elif prediction == 6%}
+    <p>World</p>
+    {% endif %}
+  </body>
+</html>
