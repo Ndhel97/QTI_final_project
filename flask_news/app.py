@@ -84,6 +84,11 @@ def list_news():
     return render_template('news_list.html', NewsModel=NewsModel.query.all())
 
 
+@app.route('/news_list/<category>', methods=['GET'])
+def list_news_filter(category):
+    return render_template('news_list.html', NewsModel=NewsModel.query.filter_by(news_category=category))
+
+
 @app.route('/news_list/delete/<news_id>', methods=['POST'])
 def del_news(news_id):
     news = NewsModel.query.get_or_404(news_id)
