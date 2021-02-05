@@ -20,5 +20,12 @@
     {% elif prediction == 6%}
     <p>World</p>
     {% endif %}
+    <br />
+    <br />
+    <div>
+      <form action="{{ url_for('list_news') }}">
+        <input type="submit" value="Go to News List Page" />
+      </form>
+    </div>
   </body>
 </html>

@@ -84,8 +84,9 @@ def list_news():
     return render_template('news_list.html', NewsModel=NewsModel.query.all())
 
 
-@app.route('/news_list/<category>', methods=['GET'])
+@app.route('/news_list/<category>', methods=['POST'])
 def list_news_filter(category):
+    category = request.form.get("category")
     return render_template('news_list.html', NewsModel=NewsModel.query.filter_by(news_category=category))
 
 
