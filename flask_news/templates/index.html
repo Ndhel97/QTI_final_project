@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>HNews Classifier</title>
+    <meta charset="UTF-8" />
+    <title>News Classifier</title>
   </head>
   <body>
     <div>
-      <form action="{{ url_for('predict')}}" method="POST">
+      <form action="{{ url_for('predict') }}" method="POST">
         <textarea name="text" rows="6" cols="50"></textarea>
         <br />
         <br />

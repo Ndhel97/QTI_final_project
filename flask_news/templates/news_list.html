@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>News List</title>
+  </head>
+  <body>
+    <h3>
+      <a href="{{ url_for('list_news') }}"
+        >Comments - Flask SQLAlchemy example</a
+      >
+    </h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>News</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for news in NewsModel %}
+        <tr>
+          <td>{{ news.id }}</td>
+          <td>{{ news.news }}</td>
+          <td>{{ news.news_category }}</td>
+          <td>
+            <form
+              action="{{ url_for('del_news', news_id=news.id) }}"
+              method="POST"
+            >
+              <input class="btn" type="submit" name="delete" value="Delete" />
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
