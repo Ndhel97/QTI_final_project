@@ -1,6 +1,10 @@
 import pickle
 import numpy as np
 import string
+import nltk
+
+nltk.download('stopwords')
+
 from keras.models import load_model
 from nltk.corpus import stopwords
 from tensorflow.keras.preprocessing.sequence import pad_sequences
