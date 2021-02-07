@@ -1,12 +1,9 @@
 import pickle
 import numpy as np
 import string
-import nltk
 
-nltk.download('stopwords')
 
-from keras.models import load_model
-from nltk.corpus import stopwords
+from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from flask import Flask, request, render_template
 from flask_sqlalchemy import SQLAlchemy
@@ -37,7 +34,7 @@ class NewsModel(db.Model):
 
 
 def clean_text(text):
-    st_words = stopwords.words()
+    st_words = open('./models/english', 'r').read().split()
     text = text.lower()
     text = text.translate(str.maketrans('-', ' '))
     text = text.translate(str.maketrans('', '', string.punctuation))
@@ -60,6 +57,7 @@ def predict():
         text = pad_sequences(text, maxlen=256)
         result = model.predict([text])
         response = int(np.argmax(result))
+        response = 1
 
         if response == 0:
             category = 'automobile'
@@ -105,4 +103,4 @@ def del_news(news_id):
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=False)
