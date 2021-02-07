@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HNews Classifier</title>
+  </head>
+  <body>
+    <div>
+      <form action="{{ url_for('predict')}}" method="POST">
+        <textarea name="text" rows="6" cols="50"></textarea>
+        <br />
+        <br />
+        <button type="submit" class="btn">Predict</button>
+      </form>
+    </div>
+  </body>
+</html>

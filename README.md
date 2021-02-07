@@ -1,3 +1,4 @@
 # Repository QTI Final Project
 
-Dataset yang digunakan adalah "News_Category_Dataset_v2.json"
+Dataset "News Classification: Inshort daily news data"
+from https://www.kaggle.com/kishanyadav/inshort-news
