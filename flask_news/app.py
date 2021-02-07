@@ -1,8 +1,7 @@
 import pickle
 import numpy as np
 import string
-from keras.models import load_model
-from nltk.corpus import stopwords
+from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from flask import Flask, request, render_template, jsonify
 
@@ -12,7 +11,7 @@ tokenizer = pickle.load(open('models/tokenizer.pickle', 'rb'))
 
 
 def clean_text(text):
-    st_words = stopwords.words()
+    st_words = open('./models/english', 'r').read().split()
     text = text.lower()
     text = text.translate(str.maketrans('-', ' '))
     text = text.translate(str.maketrans('', '', string.punctuation))
@@ -40,4 +39,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=False)

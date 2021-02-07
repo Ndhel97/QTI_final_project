@@ -1,0 +1,6 @@
+flask==1.1.2
+flask_sqlalchemy==2.4.4
+flask_migrate==2.6.0
+psycopg2-binary==2.8.6
+alembic==1.5.2
+tensorflow==2.3.0
