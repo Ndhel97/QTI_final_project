@@ -10,7 +10,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:password123@localhost:5432/postgres'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@0.0.0.0:5432/postgres'
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
@@ -57,7 +57,6 @@ def predict():
         text = pad_sequences(text, maxlen=256)
         result = model.predict([text])
         response = int(np.argmax(result))
-        response = 1
 
         if response == 0:
             category = 'automobile'
