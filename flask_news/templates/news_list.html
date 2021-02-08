@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>News List</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>News</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for news in NewsModel %}
+        <tr>
+          <td>{{ news.id }}</td>
+          <td>{{ news.news }}</td>
+          <td>{{ news.news_category }}</td>
+          <td>
+            <form
+              action="{{ url_for('del_news', news_id=news.id) }}"
+              method="POST"
+            >
+              <input class="btn" type="submit" name="delete" value="Delete" />
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div>
+      <form action="/news_list/<category>" method="POST">
+  <label for="category">Choose a category:</label>
+  <select id="category" name="category">
+    <option value="automobile">Automobile</option>
+    <option value="entertainment">Entertainment</option>
+    <option value="politics">Politics</option>
+    <option value="science">Science</option>
+    <option value="sports">Sports</option>
+    <option value="technology">Technology</option>
+    <option value="world">World</option>
+  </select>
+  <input type="submit" value="category">
+</form>
+    </div>
+  </body>
+</html>

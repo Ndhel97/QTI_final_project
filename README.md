@@ -3,10 +3,12 @@
 Dataset "News Classification: Inshort daily news data"
 from https://www.kaggle.com/kishanyadav/inshort-news
 
-The app can be found in flask_news directory. The app can be deployed by running the dockerfile image inside flask_news folder.
 
-Run this code inside flask_news:
+Additional features: 
+- Inputs and outputs of the app are stored in a PostgreSQL database                     
+- Some routes to implement CRUD for the database
 
-*docker build -t flask_news .
-
-*docker run -p 5000:5000 flask_news 
+Development stage:
+- Run this code to create PostgreSQL database container: 
+  - docker run --name pg_news -p 5432:5432 -e POSTGRES_PASSWORD=password123 -d postgres
+- Run the app
