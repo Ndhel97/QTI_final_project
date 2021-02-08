@@ -3,6 +3,7 @@
 Dataset "News Classification: Inshort daily news data"
 from https://www.kaggle.com/kishanyadav/inshort-news
 
+
 Additional features: 
 - Inputs and outputs of the app are stored in a PostgreSQL database                     
 - Some routes to implement CRUD for the database
