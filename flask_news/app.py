@@ -2,7 +2,6 @@ import pickle
 import numpy as np
 import string
 
-
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from flask import Flask, request, render_template

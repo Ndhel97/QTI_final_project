@@ -15,7 +15,7 @@ services:
       - POSTGRES_PORT=5432
 
   app:
-    container_name: "Flask"
+    container_name: "Flask_app"
     restart: always
     build:
       context: .
